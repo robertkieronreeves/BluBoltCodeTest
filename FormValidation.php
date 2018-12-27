@@ -1,7 +1,7 @@
 <?php
 
 $name_error = $email_error = "";
-$name = $email = $message = "";
+$name = $email = $message = $success = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if (empty($_POST["name"])) {
@@ -28,6 +28,21 @@ if (empty($_POST["message"])) {
 	$message = "";
 } else {
 	$message = test_input($_POST["message"]);
+	}
+	
+	if ($name_error == '' && $email_error == '') {
+		$message_body = '';
+		unset($_POST['submit']);
+		foreach ($_POST as $key => $value){
+			$message_body .= "$key: $value\n";
+		}
+		
+		$to = $email;
+		$subject = 'A New Enquiry Has Been Submitted!';
+		if (mail($to, $subject, $message)) {
+			$success = "Your enquiry has been sent, thank you for contacting us!";
+			$name = $email = $message = '';
+		}
 	}
 }
 
