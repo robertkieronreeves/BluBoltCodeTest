@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	} else {
 		$name = test_input($_POST["name"]);
 		// tests if name input only contains letters and whitespace using ReGex
-		if (!preg_match("/^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/",$name)) {
+		if (!preg_match('/^[A-Za-z\x{00C0}-\x{00FF}][A-Za-z\x{00C0}-\x{00FF}\'\-]+([\ A-Za-z\x{00C0}-\x{00FF}][A-Za-z\x{00C0}-\x{00FF}\'\-]+)*/u', $name)) {
 			$name_error = "Only letters and spaces allowed";
 		}
 	}
