@@ -8,13 +8,15 @@ Setting up the database:
 
 Database connection varibles can be found and set as desired from line 9 in index.php:
 
+```
 $servername = "localhost";
 $username = "root";
 $password = "test";
 $dbname = "blubolttest";
+```
 
 Please use the following SQL Query to define the table structure:
-
+```
 DROP TABLE IF EXISTS `contact`;
 CREATE TABLE IF NOT EXISTS `contact` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -23,3 +25,4 @@ CREATE TABLE IF NOT EXISTS `contact` (
   `content` text NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=66 DEFAULT CHARSET=latin1;
+```
