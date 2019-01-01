@@ -6,7 +6,7 @@ require 'C:\wamp\www\html\BluBoltCodeTest\PHPMailer-master\src\Exception.php';
 require 'C:\wamp\www\html\BluBoltCodeTest\PHPMailer-master\src\PHPMailer.php';
 require 'C:\wamp\www\html\BluBoltCodeTest\PHPMailer-master\src\SMTP.php';
 
-$email = new PHPMailer(TRUE);
+// set database variables
 
 $servername = "localhost";
 $username = "root";
@@ -35,5 +35,26 @@ if(!empty($_POST["send"])) {
 	
 	$stmt->close();
 	$conn->close();
-}
+	
+	// set PHPMailer function
+	$mail = new PHPMailer(TRUE);
+	
+	try {
+		$mail->setFrom('robertkieronreeves@gmail.com', 'Rob Reeves', 0);
+		$mail->addAddress($email, 'enquiries@example.com');
+		$mail->Subject = 'New Enquiry Submitted!';
+		$mail->Body = 'Thanks for getting in touch, please see your message here:' . $content;
+		$mail->send();
+	}
+	catch (Exception $e)
+	{
+		/* PHPMailer exception. */
+		echo $e->errorMessage();
+	}
+	catch (\Exception $e)
+	{
+		echo $e->getMessage();
+	}
+	
+	}
 require_once "contactForm.php";

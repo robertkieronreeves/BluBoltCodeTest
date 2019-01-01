@@ -13,7 +13,7 @@
 
             <div class="input-row">
                 <span id="userName-info" class="info"></span><br /> <input
-                    type="text" class="input-field" placeholder="Your Name" name="userName"
+				type="text" class="input-field" placeholder="Your Name" name="userName"
                     id="userName" />
             </div>
             <div class="input-row">
@@ -58,6 +58,12 @@
             
             if (userName == "") {
                 $("#userName-info").html("Required.");
+                $("#userName").css('border', '#e66262 1px solid');
+                valid = false;
+            }
+			 if (!userName.match(/^[^±!@£$%^&*_+§¡€#¢§¶•ªº«\\<>?:;|=.,]{1,20}$/))
+            {
+                $("#userName-info").html("Please provide a valid name");
                 $("#userName").css('border', '#e66262 1px solid');
                 valid = false;
             }
