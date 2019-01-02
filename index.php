@@ -40,10 +40,18 @@ if(!empty($_POST["send"])) {
 	$mail = new PHPMailer(TRUE);
 	
 	try {
-		$mail->setFrom('enquiries@example.com ', 'BluBolt Enquiries');
+		$mail->isSMTP();
+		$mail->SMTPDebug = 0;
+		$mail->Host = 'smtp.gmail.com';
+		$mail->Port = 587;
+		$mail->SMTPSecure = 'tls';
+		$mail->SMTPAuth = true;
+		$mail->Username = "robertkieronreeves@gmail.com";
+		$mail->Password = "******";
+		$mail->setFrom('robertkieronreeves@gmail.com', 'BluBolt Enquiries');
 		$mail->addAddress($email, 'enquiries@example.com');
 		$mail->Subject = 'New Enquiry Submitted!';
-		$mail->Body = 'Thanks for getting in touch, please see your message here:' . $content;
+		$mail->Body = 'Thanks for getting in touch, please see your message here: ' . $content;
 		$mail->send();
 	}
 	catch (Exception $e)

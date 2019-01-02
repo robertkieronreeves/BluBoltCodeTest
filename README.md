@@ -27,4 +27,11 @@ CREATE TABLE IF NOT EXISTS `contact` (
 ) ENGINE=MyISAM AUTO_INCREMENT=66 DEFAULT CHARSET=latin1;
 ```
 
-From here yo should have everything you need to get started.
+I have hashed my password in index.php on line 50 as this will be a public repo. However you may use your own gmail credentials to get this running and it should work.
+
+```
+$mail->Username = "robertkieronreeves@gmail.com";
+$mail->Password = "******";
+```
+
+From here you should have everything you need to get started but please email me if you run into any issues.
