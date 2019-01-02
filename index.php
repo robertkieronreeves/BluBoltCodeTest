@@ -40,7 +40,7 @@ if(!empty($_POST["send"])) {
 	$mail = new PHPMailer(TRUE);
 	
 	try {
-		$mail->setFrom('robertkieronreeves@gmail.com', 'Rob Reeves', 0);
+		$mail->setFrom('enquiries@example.com ', 'BluBolt Enquiries');
 		$mail->addAddress($email, 'enquiries@example.com');
 		$mail->Subject = 'New Enquiry Submitted!';
 		$mail->Body = 'Thanks for getting in touch, please see your message here:' . $content;

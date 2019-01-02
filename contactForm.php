@@ -61,7 +61,7 @@
                 $("#userName").css('border', '#e66262 1px solid');
                 valid = false;
             }
-			 if (!userName.match(/^[^±!@£$%^&*_+§¡€#¢§¶•ªº«\\<>?:;|=.,]{1,20}$/))
+			 if (!userName.match(/^[^±!@£$%^&*_+§¡€#¢§¶•ªº«\\<>?:;|=.,]{1,30}$/))
             {
                 $("#userName-info").html("Please provide a valid name");
                 $("#userName").css('border', '#e66262 1px solid');
@@ -80,6 +80,12 @@
             }
             if (content == "") {
                 $("#userMessage-info").html("Required.");
+                $("#content").css('border', '#e66262 1px solid');
+                valid = false;
+            }
+			if (!content.match(/^[^±!@£$%^&*_+§¡€#¢§¶•ªº«\\<>?:;|=.,]{1,500}$/))
+            {
+                $("#userMessage-info").html("Please use only letters and numbers and 500 characters or less");
                 $("#content").css('border', '#e66262 1px solid');
                 valid = false;
             }
