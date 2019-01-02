@@ -26,3 +26,5 @@ CREATE TABLE IF NOT EXISTS `contact` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=66 DEFAULT CHARSET=latin1;
 ```
+
+From here yo should have everything you need to get started.
