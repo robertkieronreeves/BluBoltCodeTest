@@ -1,0 +1,91 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600);
+
+* {
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-font-smoothing:antialiased;
+	-moz-font-smoothing:antialiased;
+	-o-font-smoothing:antialiased;
+	font-smoothing:antialiased;
+	text-rendering:optimizeLegibility;
+}
+
+body {
+	font-family:"Open Sans", Helvetica, Arial, sans-serif;
+	font-weight:300;
+	font-size: 12px;
+	line-height:30px;
+	color:#777;
+	background:#eff9ff;
+}
+
+.form-container {
+	max-width:400px;
+	width:100%;
+	margin:0 auto;
+	position:relative;
+}
+
+.input-row {
+    margin-bottom: 10px;
+}
+
+.input-row label {
+    color: #75726c;
+}
+
+.input-field {
+    width: 100%;
+    border-radius: 2px;
+    padding: 5px;
+    border: #e0dfdf 1px solid;
+    box-sizing: border-box;
+    margin-top: 2px;
+}
+
+.span-field {
+    font: Arial;
+    font-size: small;
+    text-decoration: none;
+}
+
+.btn-submit {
+    padding: 10px 60px;
+    background: #14acfe;
+    border: #14acfe 1px solid;
+    color: #FFFFFF;
+    font-size: 1.5em;
+    border-radius: 2px;
+    cursor: pointer;
+	width: 100%;
+	margin-bottom: 5px;
+	
+}
+
+.errorMessage {
+    background-color: #e66262;
+    border: #AA4502 1px solid;
+    padding: 2px 10px;
+    color: #FFFFFF;
+    border-radius: 3px;
+}
+
+.successMessage {
+    background-color: #9fd2a1;
+    border: #91bf93 1px solid;
+    padding: 2px 10px;
+    color: #3d503d;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.info {
+    font-size: .8em;
+    color: #e66262;
+    letter-spacing: 2px;
+    padding-left: 5px;
+}
